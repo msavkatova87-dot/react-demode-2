@@ -9,7 +9,6 @@ import { Bars3Icon, XMarkIcon, MoonIcon, SunIcon } from "@heroicons/react/24/out
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
-// 🇬🇧 🇷🇺 Bayroq ikonkalari
 import { GB, RU } from "country-flag-icons/react/3x2";
 
 function NavList() {
@@ -70,6 +69,7 @@ export function NavbarSimple() {
     <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-black/80 border-b border-gray-800 shadow-xl bg-black dark:bg-blue-gray-900 text-white dark:text-white">
       <Navbar className="mx-auto max-w-screen-xl px-6 py-4 bg-transparent shadow-none">
         <div className="flex items-center justify-between text-white">
+          
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative flex items-center justify-center">
@@ -89,9 +89,10 @@ export function NavbarSimple() {
             <NavList />
           </div>
 
-          {/* Right Buttons */}
+          {/* Desktop Right Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* 🌙 Dark Mode Button */}
+            
+            {/* Dark Mode Button */}
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
@@ -104,11 +105,10 @@ export function NavbarSimple() {
               )}
             </button>
 
-            {/* 🌍 Language Switcher (Flags) */}
+            {/* Language Buttons */}
             <div className="flex items-center gap-2">
               <button
                 onClick={() => changeLanguage("en")}
-                title="Switch to English"
                 className={`p-[6px] rounded-full border transition-all duration-300 ${
                   currentLang === "en"
                     ? "border-white bg-white/20 scale-110"
@@ -120,7 +120,6 @@ export function NavbarSimple() {
 
               <button
                 onClick={() => changeLanguage("ru")}
-                title="Переключить на русский"
                 className={`p-[6px] rounded-full border transition-all duration-300 ${
                   currentLang === "ru"
                     ? "border-white bg-white/20 scale-110"
@@ -130,12 +129,9 @@ export function NavbarSimple() {
                 <RU className="w-6 h-6 rounded-full" />
               </button>
             </div>
-
-            {/* Text indicator (optional) */}
-            
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Toggle Button */}
           <IconButton
             aria-label="Toggle Navigation"
             variant="text"
@@ -155,14 +151,57 @@ export function NavbarSimple() {
         <Collapse open={openNav}>
           <div className="mt-4 rounded-md bg-black/95 border-t border-gray-700 shadow-inner p-4">
             <NavList />
-            <div className="flex flex-col mt-4 gap-3">
+
+            {/* Mobile Dark Mode + Language Switcher */}
+            <div className="flex items-center justify-between mt-4 lg:hidden">
+              
+              {/* Dark Mode */}
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+              >
+                {isDark ? (
+                  <SunIcon className="h-6 w-6 text-yellow-400" />
+                ) : (
+                  <MoonIcon className="h-6 w-6 text-gray-300" />
+                )}
+              </button>
+
+              {/* Language Switch */}
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => changeLanguage("en")}
+                  className={`p-[6px] rounded-full border transition-all duration-300 ${
+                    currentLang === "en"
+                      ? "border-white bg-white/20 scale-110"
+                      : "border-transparent hover:bg-white/10 hover:scale-105"
+                  }`}
+                >
+                  <GB className="w-6 h-6 rounded-full" />
+                </button>
+
+                <button
+                  onClick={() => changeLanguage("ru")}
+                  className={`p-[6px] rounded-full border transition-all duration-300 ${
+                    currentLang === "ru"
+                      ? "border-white bg-white/20 scale-110"
+                      : "border-transparent hover:bg-white/10 hover:scale-105"
+                  }`}
+                >
+                  <RU className="w-6 h-6 rounded-full" />
+                </button>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            {/* <div className="flex flex-col mt-4 gap-3">
               <button className="px-4 py-2 border border-white/30 text-white/80 rounded-md hover:bg-white hover:text-black transition-all duration-300">
                 Sign In
               </button>
               <button className="px-4 py-2 bg-white text-black rounded-md font-semibold hover:bg-gray-200 transition-all duration-300">
                 Join
               </button>
-            </div>
+            </div> */}
           </div>
         </Collapse>
       </Navbar>
