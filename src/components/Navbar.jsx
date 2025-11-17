@@ -19,7 +19,7 @@ function NavList() {
         { name: t("main"), path: "/" },
         { name: t("pages"), path: "/pages" },
         { name: t("email"), path: "/contacts" },
-        { name: t("Shirt"), path: "/products2" },
+        { name: t("shirt"), path: "/products2" },
         { name: t("shoes"), path: "/products" },
       ].map((item) => (
         <Typography
