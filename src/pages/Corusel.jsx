@@ -47,7 +47,7 @@ const CarouselCustomNavigation = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent transition-all duration-700 group-hover:from-black/40 group-hover:via-black/10" />
           <div className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700">
             <h2 className="text-white text-3xl font-semibold bg-black/40 px-4 py-2 rounded-lg backdrop-blur-sm group-hover:bg-white/20 group-hover:text-white tracking-wide transition-all duration-500">
-              {t("classic elegance")}
+              
             </h2>
           </div>
 
@@ -65,7 +65,7 @@ const CarouselCustomNavigation = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent transition-all duration-700 group-hover:from-black/40 group-hover:via-black/10" />
           <div className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700">
             <h2 className="text-white text-3xl font-semibold bg-black/40 px-4 py-2 rounded-lg backdrop-blur-sm group-hover:bg-white/20 group-hover:text-white tracking-wide transition-all duration-500">
-              {t("monochrome beauty")}
+              
             </h2>
           </div>
 
@@ -83,7 +83,7 @@ const CarouselCustomNavigation = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent transition-all duration-700 group-hover:from-black/40 group-hover:via-black/10" />
           <div className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700">
             <h2 className="text-white text-3xl font-semibold bg-black/40 px-4 py-2 rounded-lg backdrop-blur-sm group-hover:bg-white/20 group-hover:text-white tracking-wide transition-all duration-500">
-              {t("timeless style")}
+              
             </h2>
           </div>
 
